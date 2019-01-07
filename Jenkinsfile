@@ -1,3 +1,5 @@
+library 'shared-pipeline-comms'
+
 pipeline {
     agent any
 
