@@ -20,9 +20,15 @@ pipeline {
             }
         }
 
-        stage('Comms') {
+        stage('Test') {
             steps {
                 test()
+            }
+        }
+
+        stage('Hipchat') {
+            steps {
+                hipchatNotify(false, 'JDjenkins')
             }
         }
     }
