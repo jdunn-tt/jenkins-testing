@@ -31,5 +31,11 @@ pipeline {
                 hipchatNotify(false, 'JDjenkins')
             }
         }
+
+        stage('Email') {
+            steps {
+                emailNotify()
+            }
+        }
     }
 }
