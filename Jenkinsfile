@@ -17,5 +17,11 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+
+        stage('Comms') {
+            steps {
+                emailNotify()
+            }
+        }
     }
 }
