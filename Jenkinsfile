@@ -32,6 +32,12 @@ pipeline {
             }
         }
 
+        stage('Mattermost') {
+            steps {
+                mattermostNotify()
+            }
+        }
+
         stage('Email') {
             steps {
                 emailNotify()
