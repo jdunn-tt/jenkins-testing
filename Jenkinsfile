@@ -1,4 +1,4 @@
-library 'shared-pipeline-comms'
+library 'shared-pipeline-comms', 'jenkins-shared-build'
 
 pipeline {
     agent any
@@ -7,6 +7,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                dockerBuild.defineImage('java:8u144-jdk')
+                dockerBuild.prepImage()
+                dockerBuild.pushImage()
             }
         }
         stage('Test') {
