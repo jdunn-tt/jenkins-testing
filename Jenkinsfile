@@ -7,11 +7,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                script {
-                    dockerBuild.defineImage('java:8u144-jdk')
-                    dockerBuild.prepImage()
-                    dockerBuild.pushImage()
-                }
+                // script {
+                //     dockerBuild.defineImage('java:8u144-jdk')
+                //     dockerBuild.prepImage()
+                //     dockerBuild.pushImage()
+                // }
             }
         }
         stage('Test') {
