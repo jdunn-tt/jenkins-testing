@@ -1,5 +1,5 @@
-@library('shared-pipeline-comms')
-@library('jenkins-shared-build')
+@Library('shared-pipeline-comms')
+@Library('jenkins-shared-build')
 
 pipeline {
     agent any
