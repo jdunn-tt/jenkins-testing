@@ -2,7 +2,7 @@
 @Library('jenkins-shared-build') build
 
 pipeline {
-    agent any
+    agent { label 'tests' }
 
     stages {
         stage('Build') {
