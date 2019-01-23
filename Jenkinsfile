@@ -2,45 +2,29 @@
 @Library('jenkins-shared-build') build
 
 pipeline {
-    agent { label 'github01' }
+    agent any
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                // script {
-                //     dockerBuild.defineImage('java:8u144-jdk')
-                //     dockerBuild.prepImage()
-                //     dockerBuild.pushImage()
-                // }
+                //dockerBuild()
             }
         }
-        stage('Test') {
+        stage('Unit Test') {
             steps {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('Deploy to Dev') {
             steps {
                 echo 'Deploying....'
             }
         }
 
-        stage('Tester') {
+        stage('Integration Test') {
             steps {
                 test()
-            }
-        }
-
-        stage('Hipchat') {
-            steps {
-                hipchatNotify(false, 'JDjenkins')
-            }
-        }
-
-        stage('Mattermost') {
-            steps {
-                mattermostNotify()
             }
         }
 
