@@ -1,18 +1,18 @@
-@Library('shared-pipeline-comms') comms
+@Library('jenkins-shared-comms') comms
 @Library('jenkins-shared-build') build
 
 pipeline {
-    agent { label 'tests' }
+    agent { label 'github01' }
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                script {
-                    dockerBuild.defineImage('java:8u144-jdk')
-                    dockerBuild.prepImage()
-                    dockerBuild.pushImage()
-                }
+                // script {
+                //     dockerBuild.defineImage('java:8u144-jdk')
+                //     dockerBuild.prepImage()
+                //     dockerBuild.pushImage()
+                // }
             }
         }
         stage('Test') {
@@ -41,6 +41,12 @@ pipeline {
         stage('Mattermost') {
             steps {
                 mattermostNotify()
+            }
+        }
+
+        stage ('Slack') {
+            steps {
+                slackNotify(true)
             }
         }
 
