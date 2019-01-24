@@ -26,7 +26,7 @@ pipeline {
             steps {
                 test()
                 script {
-                    comms.testFunction()
+                    test.testFunction()
                 }
             }
         }
