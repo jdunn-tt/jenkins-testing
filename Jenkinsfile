@@ -25,6 +25,7 @@ pipeline {
         stage('Integration Test') {
             steps {
                 test()
+                comms.testFunction()
             }
         }
 
