@@ -33,7 +33,7 @@ pipeline {
 
         stage ('Slack') {
             steps {
-                slackNotify(true)
+                slackNotify(true, "ops")
             }
         }
 
