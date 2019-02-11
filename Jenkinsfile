@@ -22,14 +22,14 @@ pipeline {
             }
         }
 
-        stage('Integration Test') {
-            steps {
-                test()
-                script {
-                    test.testFunction()
-                }
-            }
-        }
+        // stage('Integration Test') {
+        //     steps {
+        //         test()
+        //         script {
+        //             test.testFunction()
+        //         }
+        //     }
+        // }
 
         stage ('Slack') {
             steps {
